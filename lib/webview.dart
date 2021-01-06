@@ -44,55 +44,22 @@ class _WebViewState extends State<WebView> {
                 ),
               ),
               Spacer(),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  "For Bussiness",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600),
-                ),
-              ),
               SizedBox(
                 width: 30,
               ),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  "For Partners",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600),
-                ),
-              ),
+              navigationbar("For Bussiness"),
               SizedBox(
                 width: 30,
               ),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  "For Users",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600),
-                ),
-              ),
+              navigationbar("For Partners"),
               SizedBox(
                 width: 30,
               ),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  "Products and Services",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600),
-                ),
+              navigationbar("For Users"),
+              SizedBox(
+                width: 30,
               ),
+              navigationbar("Products and Services"),
               SizedBox(
                 width: 30,
               ),
@@ -247,6 +214,17 @@ class _WebViewState extends State<WebView> {
           ],
         ),
       ],
+    );
+  }
+
+  Widget navigationbar(nav) {
+    return InkWell(
+      onTap: () {},
+      child: Text(
+        "$nav",
+        style: TextStyle(
+            color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+      ),
     );
   }
 }
