@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:supermario/Custom_widgets/custom_navigation_bar.dart';
+import 'package:supermario/loginContainer.dart';
 
 class WebView extends StatefulWidget {
   @override
@@ -47,19 +49,27 @@ class _WebViewState extends State<WebView> {
               SizedBox(
                 width: 30,
               ),
-              navigationbar("For Bussiness"),
+              CustomNavigationBar(
+                text: "For Bussiness",
+              ),
               SizedBox(
                 width: 30,
               ),
-              navigationbar("For Partners"),
+              CustomNavigationBar(
+                text: "For Partners",
+              ),
               SizedBox(
                 width: 30,
               ),
-              navigationbar("For Users"),
+              CustomNavigationBar(
+                text: "For Users",
+              ),
               SizedBox(
                 width: 30,
               ),
-              navigationbar("Products and Services"),
+              CustomNavigationBar(
+                text: "Products and Services",
+              ),
               SizedBox(
                 width: 30,
               ),
@@ -125,106 +135,10 @@ class _WebViewState extends State<WebView> {
               ],
             ),
             Spacer(),
-            Container(
-              margin: EdgeInsets.only(right: 10, top: 40),
-              width: 290,
-              height: 300,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[800],
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 1.0,
-                  ),
-                  BoxShadow(
-                    color: Colors.grey[500],
-                    offset: Offset(-2.0, -2.0),
-                    blurRadius: 1.0,
-                  ),
-                ],
-                color: Colors.grey[900],
-                borderRadius: BorderRadius.circular(24.0),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                      margin: EdgeInsets.only(top: 25, left: 10, right: 10),
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintStyle: TextStyle(fontSize: 17),
-                                hintText: 'phone Number',
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.all(20),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintStyle: TextStyle(fontSize: 17),
-                                hintText: 'Password',
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.all(20),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Container(
-                              padding: EdgeInsets.all(12),
-                              decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: InkWell(
-                                onTap: () {},
-                                child: Text(
-                                  "Login",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              )),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "Forget Password ?",
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          )
-                        ],
-                      )),
-                ],
-              ),
-            )
+            LoginContainer()
           ],
         ),
       ],
-    );
-  }
-
-  Widget navigationbar(nav) {
-    return InkWell(
-      onTap: () {},
-      child: Text(
-        "$nav",
-        style: TextStyle(
-            color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
-      ),
     );
   }
 }
